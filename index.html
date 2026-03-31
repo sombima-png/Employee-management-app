@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-home">
+    <header class="site-header">
+        <p class="system-title">Employee Management System</p>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link active">Home</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="new-contact.html" class="nav-link">New Contact</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="view-contacts.html" class="nav-link">View All Contacts</a>
+        </nav>
+    </header>
+
+    <main class="page-main page-main--dashboard">
+        <section class="dashboard-hero">
+            <div class="dashboard-hero-text">
+                <h1 class="dashboard-title">Dashboard</h1>
+                <p class="dashboard-subtitle">
+                    Welcome to your employee directory. Add contacts, review recent entries, and open the full list when you need it.
+                </p>
+            </div>
+        </section>
+
+        <div class="dashboard-stats" role="region" aria-label="Summary statistics">
+            <article class="stat-card stat-card--blue">
+                <div class="stat-card-icon" aria-hidden="true">👥</div>
+                <div class="stat-card-body">
+                    <p class="stat-card-label">Total contacts</p>
+                    <p class="stat-card-value" id="dash-total">0</p>
+                </div>
+            </article>
+            <article class="stat-card stat-card--violet">
+                <div class="stat-card-icon" aria-hidden="true">🏢</div>
+                <div class="stat-card-body">
+                    <p class="stat-card-label">Departments</p>
+                    <p class="stat-card-value" id="dash-departments">0</p>
+                </div>
+            </article>
+            <article class="stat-card stat-card--teal">
+                <div class="stat-card-icon" aria-hidden="true">✓</div>
+                <div class="stat-card-body">
+                    <p class="stat-card-label">With position set</p>
+                    <p class="stat-card-value" id="dash-positions">0</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="dashboard-actions">
+            <a href="new-contact.html" class="dash-btn dash-btn-primary">+ New contact</a>
+            <a href="view-contacts.html" class="dash-btn dash-btn-secondary">View all contacts</a>
+        </div>
+
+        <section class="dashboard-panel" aria-labelledby="recent-heading">
+            <div class="dashboard-panel-head">
+                <h2 id="recent-heading" class="dashboard-panel-title">Recent contacts</h2>
+                <label class="dashboard-search-wrap">
+                    <span class="visually-hidden">Filter recent contacts</span>
+                    <input type="search" id="dashboard-search" class="dashboard-search" placeholder="Filter by name, email, or department…" autocomplete="off">
+                </label>
+            </div>
+            <div class="dashboard-table-wrap">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboard-recent-body">
+                        <tr>
+                            <td colspan="3" class="table-empty">No contacts yet. Add your first one from New Contact.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <small>Employee Management Application — HTML, CSS &amp; JavaScript</small>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

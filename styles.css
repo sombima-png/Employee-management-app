@@ -1,0 +1,487 @@
+/* Employee Management Application — Step 7: navigation, layout, form, table, buttons */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+    color: #222;
+    background: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ——— Navigation bar (all pages) ——— */
+.site-header {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-bottom: 3px solid #4361ee;
+}
+
+.system-title {
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.main-nav {
+    font-size: 1rem;
+}
+
+.main-nav .nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.15rem 0.25rem;
+}
+
+.main-nav .nav-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.main-nav .nav-link.active {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-separator {
+    color: #888;
+    margin: 0 0.35rem;
+}
+
+/* ——— Page layout ——— */
+.page-main {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+}
+
+.intro-section h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.intro-section .lead,
+.page-lead {
+    max-width: 40rem;
+    color: #444;
+}
+
+.page-heading {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-lead {
+    margin-bottom: 1.25rem;
+}
+
+.site-footer {
+    background: #e8e8e8;
+    color: #555;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+/* ——— Form (New Contact) ——— */
+.form-panel {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1.5rem;
+    max-width: 32rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.35rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.form-group input:focus {
+    outline: 2px solid #4361ee;
+    outline-offset: 1px;
+}
+
+.form-actions {
+    margin-top: 1.25rem;
+}
+
+/* ——— Buttons ——— */
+.btn {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #4361ee;
+    color: #fff;
+    border: 1px solid #2f4bc9;
+}
+
+.btn-primary:hover {
+    background: #3651d4;
+}
+
+.btn-small {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.btn-details {
+    background: #4361ee;
+    color: #fff;
+}
+
+.btn-details:hover {
+    background: #3651d4;
+}
+
+.btn-edit {
+    background: #f4a261;
+    color: #222;
+}
+
+.btn-edit:hover {
+    background: #e8954f;
+}
+
+.btn-delete {
+    background: #e63946;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background: #d62f3c;
+}
+
+/* ——— Table (View All Contacts) ——— */
+.table-panel {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow-x: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.65rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background: #1a1a2e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.data-table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.table-empty {
+    text-align: center;
+    color: #666;
+    padding: 2rem 1rem !important;
+}
+
+.actions-cell {
+    white-space: normal;
+    vertical-align: top;
+}
+
+/* ——— Home dashboard (modern) ——— */
+.page-home {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.page-main--dashboard {
+    max-width: 1100px;
+}
+
+.dashboard-hero {
+    margin-bottom: 1.75rem;
+}
+
+.dashboard-title {
+    font-size: clamp(1.65rem, 4vw, 2rem);
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    max-width: 36rem;
+    line-height: 1.6;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.35rem;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+.stat-card-icon {
+    font-size: 1.75rem;
+    line-height: 1;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.stat-card--blue .stat-card-icon {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.stat-card--violet .stat-card-icon {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+}
+
+.stat-card--teal .stat-card-icon {
+    background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+}
+
+.stat-card-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.stat-card-value {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.1;
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.dash-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.dash-btn-primary {
+    background: linear-gradient(135deg, #4361ee, #5a67d8);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(67, 97, 238, 0.35);
+}
+
+.dash-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    color: #fff;
+}
+
+.dash-btn-secondary {
+    background: #fff;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+.dash-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.dashboard-panel {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+}
+
+.dashboard-panel-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 1.35rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: linear-gradient(180deg, #fafbfc 0%, #fff 100%);
+}
+
+.dashboard-panel-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.dashboard-search-wrap {
+    flex: 1;
+    min-width: 200px;
+    max-width: 320px;
+}
+
+.dashboard-search {
+    width: 100%;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.dashboard-search:focus {
+    outline: none;
+    border-color: #4361ee;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.dashboard-table-wrap {
+    overflow-x: auto;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 0.85rem 1.35rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.dashboard-table th {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    background: #fafafa;
+}
+
+.dashboard-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.dashboard-table .table-empty {
+    padding: 2.5rem 1.35rem !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .page-main {
+        padding: 1rem;
+    }
+
+    .main-nav {
+        line-height: 1.8;
+    }
+
+    .nav-separator {
+        display: none;
+    }
+
+    .main-nav .nav-link {
+        display: inline-block;
+        margin-right: 0.75rem;
+    }
+
+    .dashboard-panel-head {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dashboard-search-wrap {
+        max-width: none;
+    }
+}

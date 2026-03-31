@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact — Employee Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <p class="system-title">Employee Management System</p>
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="new-contact.html" class="nav-link active">New Contact</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="view-contacts.html" class="nav-link">View All Contacts</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <h1 class="page-heading">New Contact</h1>
+        <p class="page-lead">Add employee details using the form below.</p>
+
+        <div class="form-panel">
+            <form id="contact-form" action="#" method="post" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. jane@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. 555-0100" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" placeholder="e.g. Engineering" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position</label>
+                    <input type="text" id="position" name="position" placeholder="e.g. Analyst">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <small>Employee Management Application — HTML, CSS &amp; JavaScript</small>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
